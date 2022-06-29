@@ -1,0 +1,94 @@
+@import "../../home/home.component.scss";
+
+.newSale{
+    height: 100%;
+    background-color: rgb(182, 175, 175);
+    border-radius: 8px 8px 0px 0px;
+}
+    .clientDetails{
+        display: flex;
+        background-color: rgb(92, 86, 86);
+        height: 100%;
+        border-radius: 5px 5px 0px 0px;
+    }
+        .buttonsClient{
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+        }
+            .buttonsClient_openDialog{
+                width: 45%;
+                height: 95%;
+            }
+            .buttonsClient_ukClient{
+                width: 45%;
+                height: 95%;
+            }
+        .formClient, .formProduct{
+            width: 85%;
+            height: 60px;
+            flex-wrap: wrap;
+            font-size: 16px;
+            background-color: rgb(92, 86, 86);
+            border-radius: 0px 5px 0px 0px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            margin-right: 5px;
+        }            
+            .formClient > mat-form-field{
+                height: 50px;
+                width: 25%;
+            }
+            .formProduct > button{
+                width: 25%;
+                height: 95%;
+            } 
+            .fieldNumber{
+                height: 50px;
+                width: 10%;
+            }
+    .billTitle{
+        display: flex;
+        justify-content: center;
+    }
+    .productDetails{
+        display: flex;
+        margin-right: 10px;
+        background-color: rgb(92, 86, 86);
+        border-radius: 5px 5px 0px 0px;
+        margin: 0;
+    }
+        .buttonsProduct{
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+            .buttonsProduct_openDialog{
+                width: 95%;
+                height: 90%;
+            }
+        table{
+            width: 100%;
+            height: 100%;
+        }
+    .productsbill{
+        height: 100%;
+        background-color: rgb(104, 97, 97);
+    }
+        .productListTable{
+            overflow:hidden !important;
+        }
+        .billInformation{
+            height: 100%;
+        }
+        .billInformation > button{
+            width: 98.5%;
+            margin: 10px;
+        }
+        tr.mat-footer-row {
+            font-weight: bold;
+            border-top: 1px solid white;
+          }

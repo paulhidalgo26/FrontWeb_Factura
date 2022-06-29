@@ -1,0 +1,27 @@
+@import "../home/home.component.scss";
+
+.mat-table{    
+    width: 100%;
+    background-color: #11161f;
+}
+.searchBox{
+    background: #11161f;
+    border-radius: 8.5px 8.5px 0px 0px;
+    font-size: 13px;
+    width: 100%;
+    height: 40px;
+}
+.mat-form-field{
+    width: 95%;
+    margin: 0px 10px 1% 1%;
+}
+.mat-paginator{
+    font-size: 16px;
+    background-color: #11161f;
+    width: 100%;
+}
+.buttonAdd{
+    align-items: flex-end;
+    margin-left: 70%;
+    height: 50%;
+}

@@ -1,0 +1,70 @@
+@import "../../home/home.component.scss";
+
+h2{
+    background-color: rgb(92, 86, 86);
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+}
+    .clientDetails{
+        display: flex;
+        background-color: rgb(92, 86, 86);
+        height: 100%;
+    }
+        .formClient{
+            width: 100%;
+            height: 60px;
+            flex-wrap: wrap;
+            font-size: 16px;
+            background-color: rgb(92, 86, 86);
+            border-radius: 0px 5px 0px 0px;
+            display: flex;
+            justify-content: space-between;
+        }            
+            .formClient > mat-form-field{
+                height: 50px;
+                width: 25%;
+            }
+    .billTitle{
+        display: flex;
+        justify-content: center;
+    }
+    .productDetails{
+        display: flex;
+        margin-right: 10px;
+        background-color: rgb(92, 86, 86);
+        border-radius: 5px 5px 0px 0px;
+        margin: 0;
+    }
+        table{
+            width: 100%;
+            height: 100%;
+        }
+    .productsbill{
+        height: 100%;
+        background-color: rgb(104, 97, 97);
+    }
+        .productListTable{
+            overflow:hidden !important;
+        }
+        .billInformation{
+            height: 100%;
+        }
+        .billInformation > button{
+            width: 98.5%;
+        }
+        tr.mat-footer-row {
+            font-weight: bold;
+            border-top: 1px solid white;
+          }
+          .formTotal{
+            width: 100%;
+            height: 60px;
+            flex-wrap: wrap;
+            font-size: 16px;
+            background-color: rgb(92, 86, 86);
+            border-radius: 0px 5px 0px 0px;
+            display: flex;
+            justify-content: end;
+          }
