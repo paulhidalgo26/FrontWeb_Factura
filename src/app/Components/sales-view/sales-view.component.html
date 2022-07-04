@@ -1,13 +1,12 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">VENTAS</div>
-    <div class="page__content shadow">
-        <div class="searchBox">
-            <mat-form-field appearance="standard">
-                <mat-label>Busqueda Inteligente ID, Name, Unit Price or Genre.</mat-label>
-                <input matInput (keyup)="searchSales($event)" placeholder="" #input>
-            </mat-form-field>
+    <div class="d-flex page__box p-3 mt-2" id="barraaSp">VENTAS</div>
+    <div class="page__content shadow" id="contenedor">
+        
+        <div  id="alineacion">
+            <img src="./assets/icons8-búsqueda-64.png" alt="">
+            <input   (keyup)="searchSales($event)" placeholder="" id="busqueda">
         </div>
-        <table class="page__content-data" 
+        <table class="page__content-data"  
         mat-table [dataSource]="dataSource" 
         class="mat-elevation-24">
             <ng-container matColumnDef="ID">
@@ -38,6 +37,6 @@
             <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
         </table>
-        <mat-paginator #paginator [pageSizeOptions]="[7]"></mat-paginator>
+        <mat-paginator #paginator [pageSizeOptions]="[7]" ></mat-paginator >
     </div>
   </div>

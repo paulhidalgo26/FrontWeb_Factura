@@ -1,47 +1,47 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2"><h1>PRODUCTOS</h1>
-        <button class="buttonAdd" mat-flat-button *ngIf="user.admin"  (click)="addProduct()">Add New Product</button>
+    <div class="d-flex page__box p-3 mt-2" id="barraSuperior">PRODUCTOS
+        <button class="buttonAdd"  mat-flat-button *ngIf="user.admin" 
+         (click)="addProduct()">Nuevo Producto</button>
     </div>
     <div class="page__content shadow">
-        <div class="searchBox">
-            <mat-form-field appearance="standard">
-                <mat-label>Search by ID, Name, Unit Price or Genre.</mat-label>
-                <input matInput (keyup)="searchProducts($event)" placeholder="" #input>
-            </mat-form-field>
+        <div id="alineacion">                
+                    <img src="./assets/icons8-búsqueda-64.png" alt="">
+                    <input  (keyup)="searchProducts($event)" placeholder="" id="busqueda" >
+               
         </div>
-        <table class="page__content-data" 
-        mat-table [dataSource]="dataSource" 
-        class="mat-elevation-24">
-            <ng-container matColumnDef="Name">
-                <th mat-header-cell *matHeaderCellDef>Name</th>
-                <td mat-cell *matCellDef="let element">
-                    {{ element.name }}</td>
-            </ng-container>
-            <ng-container matColumnDef="Genre">
-                <th mat-header-cell *matHeaderCellDef>Genre</th>
-                <td mat-cell *matCellDef="let element">
-                    {{ element.genre }}</td>
-            </ng-container>
-            <ng-container matColumnDef="Quantity">
-                <th mat-header-cell *matHeaderCellDef>Qty.</th>
-                <td mat-cell *matCellDef="let element">
-                    {{ element.quantity }}</td>
-            </ng-container>
-            <ng-container matColumnDef="Unit Price">
-                <th mat-header-cell *matHeaderCellDef>Unit Price</th>
-                <td mat-cell *matCellDef="let element">
-                    {{ element.unitPrice }} $</td>
-            </ng-container> 
-            <ng-container *ngIf="user.admin" matColumnDef="Options">
-                <th mat-header-cell *matHeaderCellDef>Actions</th>
-                <td mat-cell *matCellDef="let element">
-                    <button  mat-raised-button color="primary"
-                    (click)="selectProduct(element)"> <mat-icon>edit</mat-icon> </button>
-                </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
-        </table>
-        <mat-paginator #paginator [pageSizeOptions]="[7]"></mat-paginator>
+            <table class="page__content-data" 
+            mat-table [dataSource]="dataSource" 
+            class="mat-elevation-24">
+                <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.name }}</td>
+                </ng-container>
+                <ng-container matColumnDef="Genre">
+                    <th mat-header-cell *matHeaderCellDef>Genre</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.genre }}</td>
+                </ng-container>
+                <ng-container matColumnDef="Quantity">
+                    <th mat-header-cell *matHeaderCellDef>Qty.</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.quantity }}</td>
+                </ng-container>
+                <ng-container matColumnDef="Unit Price">
+                    <th mat-header-cell *matHeaderCellDef>Unit Price</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{ element.unitPrice }} $</td>
+                </ng-container> 
+                <ng-container *ngIf="user.admin" matColumnDef="Options">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button  mat-raised-button color="primary"
+                        (click)="selectProduct(element)"> <mat-icon>edit</mat-icon> </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+            </table>
+            <mat-paginator #paginator [pageSizeOptions]="[7]"></mat-paginator>
+        </div>
     </div>
-  </div>

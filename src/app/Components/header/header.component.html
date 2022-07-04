@@ -11,7 +11,7 @@
               [matMenuTriggerFor]="menu"
               class="user mt-2 d-flex align-items-center"
             >
-            <mat-icon>account_box</mat-icon>
+            <mat-icon id="icono">account_circle</mat-icon>
               {{ user.email }}
               <mat-icon class="user-image-icon ml-1"
                 >keyboard_arrow_down</mat-icon
@@ -31,8 +31,8 @@
               [matMenuTriggerFor]="menu"
               class="user mt-2 d-flex align-items-center"
             >
-              <mat-icon>account_box</mat-icon>
-              Cliente
+              <mat-icon id="icono">account_circle</mat-icon>
+              Usuario 
               <mat-icon class="user-image-icon ml-1">
                 keyboard_arrow_down
               </mat-icon>
@@ -41,7 +41,7 @@
               <button mat-menu-item class="loginBtn"
               [routerLink]="['/login']">
                 <mat-icon>exit_to_app</mat-icon>
-                Salir
+                Cliente
               </button>
               <button mat-menu-item class="loginBtn"
               [routerLink]="['/adminLogin']">

@@ -1,14 +1,14 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Login</div>
-    <div class="page__content shadow p-3 position-relative">
+    <div class="d-flex page__box p-3 mt-2" id="hederlogin" >Cliente</div>
+    <div class="page__content shadow p-3 position-relative" id="content">
       <div class="page__content-data position-absolute text-center">
-        <mat-card>
-            <mat-card-content>
+        <mat-card id="ingresoD">
+            <mat-card-content id="nombre">
                 <form [formGroup]="loginForm" (ngSubmit)="login()">
-                    <p>
-                        <mat-form-field>
+                    <p >
+                        <mat-form-field >
                             <input type="text" formControlName="email" matInput
-                            placeholder="Email">
+                            placeholder="Email" > 
                         </mat-form-field>
                     </p>
                     <p>
@@ -19,7 +19,7 @@
                     </p>
                     <div>
                         <button type="submit" [disabled]="!loginForm.valid" mat-raised-button
-                        >Login</button>
+                        >Acceso</button>
                     </div>
             </form>
             </mat-card-content>

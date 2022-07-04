@@ -6,7 +6,15 @@
     background-color: #11161f;
 }
 .buttonAdd{
-    align-items: flex-end;
-    margin-left: 75%;
-    height: 50%;
+    
+    background-color: rgb(210, 30, 60);
+    border-radius: 10%;
+    font-family: cursive;
+    font-size: large;
+}
+#barrasuperior{
+    background: darkturquoise;
+    font-family: cursive;
+    justify-content: space-between; 
+    align-items: baseline;
 }

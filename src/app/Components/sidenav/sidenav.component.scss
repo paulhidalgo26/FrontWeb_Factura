@@ -6,11 +6,14 @@
   }
   .logo {
     text-align: center;
-    padding: 2.6rem 1rem;
+    // padding: 1rem 1rem;
+    margin: -19px;
+    border-style: outset;
     img{
-      width: 200px;
-      height: 100px;
-      background-color: aliceblue;
+      width: 170px;
+      height: 135px;
+      background-color: #8ed1fc59;
+      border-radius: 93%
     }
   }
   .mat-divider {
@@ -18,7 +21,7 @@
     border-color: white;
   }
   .mat-list-item {
-    color: #94a3b8 !important;
+    color: #173f75 !important;
     font-size: 0.8rem;
     height: 44px !important;
     margin-bottom: 4px;
@@ -30,7 +33,7 @@
         border-radius: 5px;
         margin: 0 8px;
         &:hover {
-          background: #2c3344 !important;
+          background: #b4bfda !important;
         }
       }
     }
@@ -58,4 +61,14 @@
     font-weight: 100;
     letter-spacing: 1px;
   }
-  
+  #icono{
+    border-radius: 50%;
+    width: 31px;
+    height: 29px;
+    padding: 1px;
+    padding-bottom: 23px;
+    padding-left: 2px;
+    border-color: aqua;
+    border: solid;
+    font-size: 21px
+  }

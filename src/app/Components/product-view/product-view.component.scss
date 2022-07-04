@@ -21,7 +21,38 @@
     width: 100%;
 }
 .buttonAdd{
-    align-items: flex-end;
-    margin-left: 70%;
-    height: 50%;
+   // margin-left: 65%;
+   // margin-top: 8px;
+   // height: 50%;
+    background-color: rgb(210, 30, 60);
+    border-radius: 10%;
+    font-family: cursive;
+    font-size: large;
 }
+
+#barraSuperior{
+    background: darkturquoise;
+    font-family: cursive;
+    justify-content: space-between; 
+    align-items: baseline;
+      
+}
+#busqueda{
+    color: black;
+    size: 15px !important;
+    border-radius: 15px 15px 15px 15px !important;
+    font-size: 20px !important;   
+    border: 1px solid #39c !important;   
+    padding: 4px !important
+    
+}
+
+#contenedor{
+background-color: rgb(250, 241, 234);
+}
+#alineacion{
+float: left;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
