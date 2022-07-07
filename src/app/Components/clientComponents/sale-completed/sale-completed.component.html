@@ -1,62 +1,65 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Sale Completed</div>
+    <div class="d-flex page__box p-3 mt-2" id="barra">Venta Finalizada</div>
     <div class="page__content shadow">
-        <h2>Bill</h2>
+        <h2 style="background: white;">Factura</h2>
         <div class="clientDetails">
             <form class="formClient" [formGroup]="clientForm">
                 <mat-form-field appearance="fill">
-                    <mat-label>ID</mat-label>
-                    <input matInput type="text" formControlName="ClientID">
+                    <mat-label id="colorLabel">ID</mat-label>
+                    <input id="colorLabel" matInput type="text" formControlName="ClientID">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input matInput type="text" formControlName="ClientName">
+                    <mat-label id="colorLabel">Nombre</mat-label>
+                    <input id="colorLabel" matInput type="text" formControlName="ClientName">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Cedula</mat-label>
-                    <input matInput type="text" formControlName="ClientCedula">
+                    <mat-label id="colorLabel">Cedula</mat-label>
+                    <input id="colorLabel" matInput type="text" formControlName="ClientCedula">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="text" formControlName="ClientEmail">
+                    <mat-label id="colorLabel">Correo</mat-label>
+                    <input id="colorLabel" matInput type="text" formControlName="ClientEmail">
                 </mat-form-field>
             </form>
         </div>
         <div class="saleDetails">
             <table class="page__content-data" mat-table [dataSource]="dataSource" class="mat-elevation-24">
                 <ng-container matColumnDef="ID">
-                    <th mat-header-cell *matHeaderCellDef>ID</th>
-                    <td mat-cell *matCellDef="let element">{{ element.ID }}</td>
+                    <th mat-header-cell *matHeaderCellDef id="colorLabel">ID</th>
+                    <td mat-cell *matCellDef="let element" id="colorLabel">{{ element.ID }}</td>
                 </ng-container>
                 <ng-container matColumnDef="Name">
-                    <th mat-header-cell *matHeaderCellDef>Name</th>
-                    <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+                    <th mat-header-cell *matHeaderCellDef id="colorLabel">Nombre</th>
+                    <td mat-cell *matCellDef="let element" id="colorLabel">{{ element.Name }}</td>
                 </ng-container>
                 <ng-container matColumnDef="Quantity">
-                    <th mat-header-cell *matHeaderCellDef>Quantity</th>
-                    <td mat-cell *matCellDef="let element">{{ element.Quantity }}</td>
+                    <th mat-header-cell *matHeaderCellDef id="colorLabel">Cantidad</th>
+                    <td mat-cell *matCellDef="let element" id="colorLabel">{{ element.Quantity }}</td>
                 </ng-container>
                 <ng-container matColumnDef="Subtotal">
-                    <th mat-header-cell *matHeaderCellDef>Subtotal</th>
-                    <td mat-cell *matCellDef="let element">{{ element.Subtotal }} $</td>
+                    <th mat-header-cell *matHeaderCellDef id="colorLabel">Subtotal</th>
+                    <td mat-cell *matCellDef="let element" id="colorLabel">{{ element.Subtotal }} $</td>
                 </ng-container> 
     
-                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+                <tr mat-header-row *matHeaderRowDef="tableColumns" id="colorLabel"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns" id="colorLabel"></tr>
             </table>
-            <mat-paginator #paginator [pageSizeOptions]="[4]"></mat-paginator>
+            <mat-paginator id="foter" #paginator [pageSizeOptions]="[4]"  ></mat-paginator>
         </div>
         <div>
             <form class="formTotal" [formGroup]="billForm">
                 <mat-form-field class="total" appearance="fill">
-                        <mat-label>Total without IVA</mat-label>
-                        <input matInput type="text" formControlName="total">
+                        <mat-label id="colorLabel">Total</mat-label>
+                        <input id="colorLabel" matInput type="text" formControlName="total">
                 </mat-form-field>
                 <mat-form-field class="totalIVA" appearance="fill">
-                    <mat-label>Total with IVA</mat-label>
-                    <input matInput type="text" formControlName="totalIVA">
+                    <mat-label id="colorLabel">Total(IVA)</mat-label>
+                    <input id="colorLabel" matInput type="text" formControlName="totalIVA">
             </mat-form-field>
             </form>
         </div>
+        <button routerLink="/new-sale" type="button" class="btn btn-primary">Salir</button>
+        
     </div>
+    
 </div>

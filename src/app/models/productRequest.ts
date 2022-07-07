@@ -4,5 +4,5 @@ export interface productRequest{
     Quantity: number;
     UnitPrice: number;
     Cost: number;
-    ImageURL: string;
+    //ImageURL: string;
 }

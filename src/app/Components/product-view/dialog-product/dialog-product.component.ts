@@ -16,7 +16,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class DialogProductComponent implements OnInit {
 
-  private _product!: Product;
   private _productEdited!: productRequest;
   public title: string = '';
   public btnTitle: string = '';
@@ -26,8 +25,8 @@ export class DialogProductComponent implements OnInit {
     "Genre": [{value: '', disabled: false}, [Validators.required, Validators.minLength(1)]],
     'Quantity':  [{value: 0, disabled: false}, Validators.required],
     'UnitPrice':  [{value: 0, disabled: false}, [Validators.required, Validators.minLength(1)]],
-    'Cost':  [{value: 0, disabled: false}, [Validators.required, Validators.minLength(1)]],
-    "ImageURL": [{value: '', disabled: false}, [Validators.required, Validators.minLength(1)]]
+    'Cost':  [{value: 0, disabled: false}, [Validators.required, Validators.minLength(1)]]
+     //"ImageURL": [{value: '', disabled: false}, [Validators.required, Validators.minLength(0)]]
   });
   constructor(private formBuilder: FormBuilder,
     private apiProduct: ApiProductService,
@@ -38,16 +37,15 @@ export class DialogProductComponent implements OnInit {
   ngOnInit(): void {
     if(this.data.action){
       this.getProductByID(this.data.product.id);
-      this.title = "Product #" + this.data.product.id;
-      this.btnTitle = "Edit";
+      this.title = "Producto #" + this.data.product.id;
+      this.btnTitle = "Editar";
     } else {
-      this.title = "New product";
-      this.btnTitle = 'Add';
+      this.title = "Nuevo producto";
+      this.btnTitle = 'Agregar';
     }
   }
   getProductByID(id: number){
     this.apiProduct.getSpecifiedProduct(id).subscribe(response =>{
-      this._product = response.data[0];
       this.showProductInfo(response.data[0]);
     })
   }
@@ -57,8 +55,8 @@ export class DialogProductComponent implements OnInit {
       "Genre": [{value: product.genre, disabled: false}, [Validators.required, Validators.minLength(1)]],
       'Quantity':  [{value: product.quantity, disabled: false}, [Validators.required, Validators.minLength(1)]],
       'UnitPrice':  [{value: product.unitPrice, disabled: false}, [Validators.required, Validators.minLength(1)]],
-      'Cost':  [{value: product.cost, disabled: false}, [Validators.required, Validators.minLength(1)]],
-      "ImageURL": [{value: product.imageURL, disabled: false}, [Validators.required, Validators.minLength(1)]]
+      'Cost':  [{value: product.cost, disabled: false}, [Validators.required, Validators.minLength(1)]]
+     //"ImageURL": [{value: product.imageURL, disabled: false}, [Validators.required, Validators.minLength(1)]]
     })
   }
   buttonAction(){

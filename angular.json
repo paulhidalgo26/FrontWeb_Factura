@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "e4b7cc68-31a7-4873-b205-fdbe39c3c265"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Athanasia": {
+    "Facturacion": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Athanasia",
+            "outputPath": "dist/Facturacion",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Athanasia:build:production"
+              "browserTarget": "Facturacion:build:production"
             },
             "development": {
-              "browserTarget": "Athanasia:build:development"
+              "browserTarget": "Facturacion:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Athanasia:build"
+            "browserTarget": "Facturacion:build"
           }
         },
         "test": {
@@ -109,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "Athanasia"
+  "defaultProject": "Facturacion"
 }

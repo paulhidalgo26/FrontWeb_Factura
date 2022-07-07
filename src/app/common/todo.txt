@@ -1,3 +1,0 @@
-Add a module to add a new client in NewBill.
-Put error messages in the controls for the forms.
-Change the login section, only the user from the UserAdmin must be capable of login in the frontend

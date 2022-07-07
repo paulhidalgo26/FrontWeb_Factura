@@ -21,10 +21,10 @@ import { DataService } from 'src/app/services/data/data.service';
 export class SaleCompletedComponent implements OnInit {
 
   public clientForm = this.formBuilder.group({
-    'ClientID': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientName': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientCedula': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientEmail': [{value: 'Final Client', disabled: true}, Validators.required]
+    'ClientID': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientName': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientCedula': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientEmail': [{value: 'Consum. Final', disabled: true}, Validators.required]
   })
   public tableColumns: string[] = 
     ["ID", "Name", "Quantity", "Subtotal"];

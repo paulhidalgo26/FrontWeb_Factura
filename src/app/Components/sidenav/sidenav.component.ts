@@ -17,15 +17,16 @@ export class SidenavComponent implements OnInit {
     public apiAuthClientService: ApiAuthClientService,
     public apiAuthAdminService: ApiAuthAdminService
   ){
-    this.apiAuthClientService.us.subscribe(res => {
-      this.user = res;
-      ActualUser.User = this.user;
-    });
     this.apiAuthAdminService.us.subscribe(res => {
       this.user = res;
       ActualUser.User = this.user;
     }); 
+    this.apiAuthClientService.us.subscribe(res => {
+      this.user = res;
+      ActualUser.User = this.user;
+    });
   }
   ngOnInit(): void {
+
   }
 }

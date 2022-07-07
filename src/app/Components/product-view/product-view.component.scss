@@ -2,7 +2,8 @@
 
 .mat-table{    
     width: 100%;
-    background-color: #11161f;
+    background-color: #658acf;
+    
 }
 .searchBox{
     background: #11161f;
@@ -17,7 +18,7 @@
 }
 .mat-paginator{
     font-size: 16px;
-    background-color: #11161f;
+    background-color: #31518c;
     width: 100%;
 }
 .buttonAdd{
@@ -29,7 +30,9 @@
     font-family: cursive;
     font-size: large;
 }
-
+table{
+    background-color: aliceblue;
+}
 #barraSuperior{
     background: darkturquoise;
     font-family: cursive;
@@ -54,5 +57,17 @@ background-color: rgb(250, 241, 234);
 float: left;
 align-items: flex-start;
 justify-content: flex-start;
+}
+#colorLabel{
+    color: black !important;   
+}
+.mat-row:nth-child(even){
+    background-color: #e4f0ec;
+    border-bottom: solid 2px black;
+}
+.mat-row:nth-child(odd){
+    background-color:#ffffff;
+    border-bottom: solid 2px black;
+
 }
 

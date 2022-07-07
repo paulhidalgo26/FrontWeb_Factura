@@ -5,5 +5,5 @@ export interface Product{
     quantity: number;
     cost: number;
     unitPrice: number;
-    imageURL: string;
+    // imageURL: string;
 }

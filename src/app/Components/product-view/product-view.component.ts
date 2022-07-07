@@ -63,7 +63,7 @@ export class ProductViewComponent implements OnInit {
     });
   }
   addProduct(){
-    const empty: Product ={id: 0, genre: '', name: '', quantity: 0, cost: 0, unitPrice: 0, imageURL: ''};
+    const empty: Product ={id: 0, genre: '', name: '', quantity: 0, cost: 0, unitPrice: 0}; // imageURL: ''
     const dialogRef = this.dialog.open(DialogProductComponent, {
       width: "600px",
       data: {

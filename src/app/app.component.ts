@@ -9,7 +9,7 @@ import { ApiAuthClientService } from './services/apiAuth/api-auth-client.service
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Athanasia';
+  title = 'Facturacion';
   user!: User;
   sideBarOpen = false;
 

@@ -50,12 +50,13 @@ export class NewSaleComponent implements OnInit {
     'ProductName': [{value: '', disabled: true}, Validators.required],
     'ProductQuantity': [{value: 0, disabled: true}, Validators.required],
     'ProductTotal': [{value: 0, disabled: true}, Validators.required]
+    
   })
   public clientForm = this.formBuilder.group({
-    'ClientID': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientName': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientCedula': [{value: 'Final Client', disabled: true}, Validators.required],
-    'ClientEmail': [{value: 'Final Client', disabled: true}, Validators.required]
+    'ClientID': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientName': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientCedula': [{value: 'Consum. Final', disabled: true}, Validators.required],
+    'ClientEmail': [{value: 'Consum. Final', disabled: true}, Validators.required]
   })
   //#endregion
   //#region Constructor&OnInit
@@ -120,10 +121,10 @@ export class NewSaleComponent implements OnInit {
   }
   finalClient(){
     this.clientForm = this.formBuilder.group({
-      'ClientID': [{value: 'Final Client', disabled: true},  Validators.required],
-      'ClientName': [{value: 'Final Client', disabled: true},  Validators.required],
-      'ClientCedula': [{value: 'Final Client', disabled: true}, Validators.required],
-      'ClientEmail': [{value: 'Final Client', disabled: true}, Validators.required],
+      'ClientID': [{value: 'Consum. Final', disabled: true},  Validators.required],
+      'ClientName': [{value: 'Consum. Final', disabled: true},  Validators.required],
+      'ClientCedula': [{value: 'Consum. Final', disabled: true}, Validators.required],
+      'ClientEmail': [{value: 'Consum. Final', disabled: true}, Validators.required],
         })
     this.actualClient.id = 1;
   }
@@ -168,6 +169,8 @@ export class NewSaleComponent implements OnInit {
     }
     this.updateBillTable();
   }
+
+  //--------------------------editar---------------------------
   removeSaleDetail(productRemoved: SaleDetailBill){
     var cont: number = 0;
     saleDetails.forEach(element => {
