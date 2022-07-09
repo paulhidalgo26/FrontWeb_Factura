@@ -26,8 +26,8 @@
             </ng-container>
             <ng-container matColumnDef="Total">
                 <th mat-header-cell *matHeaderCellDef>Total</th>
-                <td id="colorLabel" mat-cell *matCellDef="let element">
-                    {{ element.total }} $</td>
+                <td id="colorLabelT" mat-cell *matCellDef="let element">
+                    {{ element.total   | number: '1.2-2' }} $</td>
             </ng-container> 
             <ng-container matColumnDef="Select">
                 <th mat-header-cell *matHeaderCellDef></th>
