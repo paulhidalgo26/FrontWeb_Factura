@@ -1,7 +1,7 @@
 @import "../../home/home.component.scss";
 
 h2{
-    background-color: rgb(186, 146, 146);
+    background-color: rgb(245, 241, 241);
     border-radius: 5px 5px 0px 0px;
     text-align: center;
     margin: 0;
@@ -9,7 +9,7 @@ h2{
 }
     .clientDetails{
         display: flex;
-        background-color: rgb(81, 80, 80);
+        background-color: rgb(144, 221, 252);
         height: 100%;
     }
         .formClient{
@@ -17,7 +17,7 @@ h2{
             height: 60px;
             flex-wrap: wrap;
             font-size: 16px;
-            background-color: rgb(92, 86, 86);
+            background-color: rgb(144, 221, 252);
             display: flex;
             justify-content: space-between;
         }            
@@ -45,7 +45,7 @@ h2{
         }
     .productsbill{
         height: 100%;
-        background-color: rgb(164, 149, 149);
+        background-color: rgb(53, 49, 116);
     }
         .productListTable{
             overflow:hidden !important;
@@ -65,7 +65,7 @@ h2{
             height: 60px;
             flex-wrap: wrap;
             font-size: 16px;
-            background-color: rgb(255, 235, 235);
+            background-color: rgb(255, 255, 255);
             border-radius: 0px 5px 0px 0px;
             display: flex;
             justify-content: end;
@@ -82,10 +82,32 @@ h2{
           background-color: #143766;
         }
         .mat-row:nth-child(even){
-            background-color: #f4e3e3;
+            background-color: #ffffff;
             border-bottom: solid 2px;
         }
         .mat-row:nth-child(odd){
-            background-color:#f4e3e3;
+            background-color:#dbebf0;
             border-bottom: solid 2px;
+        }
+
+        
+
+        div table.totales{
+            text-align: right;
+            margin: 10px 0 0 auto;
+                    
+        }
+    #letras{
+        padding: 15px;
+        font-size: 20PX;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold; 
+        margin: inherit; 
+    }
+    
+        #numeros{
+            padding: 15px;
+            font-size: 20PX;
+            font-family: "Montserrat", sans-serif;         
+            margin: inherit;   
         }

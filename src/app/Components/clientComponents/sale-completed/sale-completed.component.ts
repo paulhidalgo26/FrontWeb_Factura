@@ -27,11 +27,19 @@ export class SaleCompletedComponent implements OnInit {
     'ClientEmail': [{value: 'Consum. Final', disabled: true}, Validators.required]
   })
   public tableColumns: string[] = 
-    ["ID", "Name", "Quantity", "Subtotal"];
+    ["ID", "Name", "Quantity","Price", "Subtotal"];
+
+
+
     public billForm = this.formBuilder.group({
-      'total': [{value: '0', disabled: true}],
-      'totalIVA': [{value: '0', disabled: true}]
+      'subtotal': [{value: '0', disabled: true}],
+      'iva': [{value: '0', disabled: true}]
     })
+
+    public billForm2 = this.formBuilder.group({
+      'total': [{value: '0', disabled: true}],
+    })
+
   sale!: Sale;
   total = 0;
   subscription!: Subscription;
@@ -57,7 +65,7 @@ fillTableandGetSpecifiedProducts(details: Sale){
         this.apiProducts.getSpecifiedProduct(detail.IDProduct).subscribe(response => {
             var product: Product = response.data[0];
             this.list.push({ID: detail.IDProduct, Name: product.name, Quantity: detail.Quantity,
-            Subtotal: detail.Quantity * product.unitPrice});
+            Price:product.unitPrice, Subtotal: detail.Quantity * product.unitPrice});
             this.total += product.unitPrice * detail.Quantity;
             this.dataSource = new MatTableDataSource(this.list);
             this.dataSource.paginator = this.paginator;  
@@ -77,8 +85,15 @@ getSpecifiedClient(sale: Sale){
 }
 getTotal(){
   this.billForm = this.formBuilder.group({
-   'totalIVA': [{value: (this.total * 1.1).toFixed(2) + " $", disabled: true}],
-   'total': [{value: (this.total).toFixed(2) + " $", disabled: true}]
- }) 
+    'subtotal': [{value: (this.total).toFixed(2) + " $", disabled: true}],
+    'iva': [{value: (this.total*0.12).toFixed(2) + " $", disabled: true}]
+   
+ })
+ 
+ this.billForm2 = this.formBuilder.group({
+  'total': [{value: (this.total + this.total*0.12).toFixed(2) + " $", disabled: true}],
+
+ 
+})
 }
 }

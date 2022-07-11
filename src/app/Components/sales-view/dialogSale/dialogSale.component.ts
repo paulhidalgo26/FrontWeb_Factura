@@ -25,8 +25,10 @@ export class DialogSaleComponent implements OnInit{
     public list: SaleDetailBill[] = [];
     public client!: Client;
 
+    
+
     public tableColumns: string[] = 
-    ["ID", "Name", "Quantity", "Subtotal"];
+    ["ID", "Name", "Quantity","Price", "Subtotal"];
 
     public dataSource!: MatTableDataSource<SaleDetailBill>;
     @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;   
@@ -40,6 +42,9 @@ export class DialogSaleComponent implements OnInit{
     public billForm = this.formBuilder.group({
         'totalIVA': [{value: '0', disabled: true}]
       })
+
+        date = new Date();
+        fecha: string;
     constructor(
         public dialogRef: MatDialogRef<DialogSaleComponent>,
         private apiProducts: ApiProductService,
@@ -48,6 +53,8 @@ export class DialogSaleComponent implements OnInit{
         private formBuilder: FormBuilder,
         @Inject(MAT_DIALOG_DATA) public data: any
     ){
+        //this.fecha=String(data.sale.date).padStart(2, '0') + '/' + String(data.sale.date.getMonth() + 1).padStart(2, '0') + '/' +data.sale.date.getFullYear();
+        this.fecha=data.sale.date
     }
     ngOnInit(): void{
         this.getSpecifiedSaleDetails();  
@@ -58,7 +65,8 @@ export class DialogSaleComponent implements OnInit{
     getSpecifiedSaleDetails(){
         this.apiSaleDetails.getSpecifyDetails(this.data.sale.id).subscribe(response => {
             this.detailsList = response.data;
-            this.fillTableandGetSpecifiedProducts(this.detailsList);         
+            this.fillTableandGetSpecifiedProducts(this.detailsList); 
+                    
         });
     }
     fillTableandGetSpecifiedProducts(details: SaleDetails[]){
@@ -66,7 +74,7 @@ export class DialogSaleComponent implements OnInit{
             this.apiProducts.getSpecifiedProduct(detail.idproduct).subscribe(response => {
                 var product: Product = response.data[0];
                 this.list.push({ID: detail.idproduct, Name: product.name, Quantity: detail.quantity,
-                Subtotal: detail.quantity * product.unitPrice});
+                Price:product.unitPrice, Subtotal: detail.quantity * product.unitPrice});
                 this.dataSource = new MatTableDataSource(this.list);
                 this.dataSource.paginator = this.paginator;  
             });        
@@ -86,7 +94,9 @@ export class DialogSaleComponent implements OnInit{
 
     getTotal(){
        this.billForm = this.formBuilder.group({
-        'totalIVA': [{value: this.data.sale.total + " $", disabled: true}]
+        'subtotal': [{value: this.data.sale.total + " $", disabled: true}],
+        'iva': [{value: (this.data.sale.total*.12).toFixed(2)  + " $", disabled: true}],
+        'totalIVA': [{value: (this.data.sale.total+this.data.sale.total*0.12).toFixed(2) + " $", disabled: true}]
       }) 
     }
     close(){

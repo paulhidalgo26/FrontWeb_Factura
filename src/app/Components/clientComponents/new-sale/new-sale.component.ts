@@ -16,10 +16,12 @@ import { DialogProductsComponent } from './dialogProducts/dialogProducts.compone
 import { Client } from 'src/app/models/client';
 import { DialogSaleConfirmation } from './dialogSaleConfirmation/dialogSaleConfirmation.component';
 import { DataService } from 'src/app/services/data/data.service';
+import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 
 var newSale: Sale;
 var saleDetails: SaleDetail[] = [];
 var saleDetailsBill: SaleDetailBill[] = [];
+var numberfac=74;
 
 @Component({
   selector: 'app-new-sale',
@@ -44,12 +46,15 @@ export class NewSaleComponent implements OnInit {
     saleDetails: []
   }
   public tableBillColumns: string[] = 
-  ["Name", "Qty.", "Subtotal", "Options"];
+  ["ID","Name", "Qty.", "Price", "Subtotal", "Options"];
 
   public productForm = this.formBuilder.group({
+    'ProductId': [{value: 0, disabled: true}, Validators.required],
     'ProductName': [{value: '', disabled: true}, Validators.required],
     'ProductQuantity': [{value: 0, disabled: true}, Validators.required],
-    'ProductTotal': [{value: 0, disabled: true}, Validators.required]
+    'ProductPrice':[{value: 0,disabled: true},Validators.required],
+    'ProductTotal': [{value: 0, disabled: true}, Validators.required],
+    'ProductStok': [{value: 0, disabled: true}, Validators.required]
     
   })
   public clientForm = this.formBuilder.group({
@@ -60,6 +65,11 @@ export class NewSaleComponent implements OnInit {
   })
   //#endregion
   //#region Constructor&OnInit
+
+  
+  numberfac:number;
+   date = new Date();
+   fecha: string;
   constructor(
     private dialog: MatDialog,
     private formBuilder: FormBuilder,
@@ -67,7 +77,11 @@ export class NewSaleComponent implements OnInit {
     private apiSale: ApiSaleService,
     private router: Router,
     private data: DataService
+    
   ) { 
+    this.numberfac= numberfac
+      
+      this.fecha=String(this.date.getDate()).padStart(2, '0') + '/' + String(this.date.getMonth() + 1).padStart(2, '0') + '/' +this.date.getFullYear();
     this.apiAuthClientService.us.subscribe(res => {
       this.user = res;
     });
@@ -104,6 +118,7 @@ export class NewSaleComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         if(result.data === true){
+          numberfac++;
           this.addSale();
         }
       }})
@@ -132,9 +147,12 @@ export class NewSaleComponent implements OnInit {
   //#region Product Selected
   selectProduct(productSelected: Product){
     this.productForm = this.formBuilder.group({
+      'ProductId': [{value: productSelected.id, disabled: true},  Validators.required],
       'ProductName': [{value: productSelected.name, disabled: true},  Validators.required],
       'ProductQuantity': [{value: 1, disabled: false},  Validators.required],
-      'ProductTotal': [{value: productSelected.unitPrice, disabled: true}, Validators.required]
+      'ProductPrice':[{value: productSelected.unitPrice,disabled: true},Validators.required],
+      'ProductTotal': [{value: productSelected.unitPrice, disabled: true}, Validators.required],
+      'ProductStok': [{value: productSelected.quantity, disabled: false}, Validators.required]
         })
     this.actualProduct = productSelected;
   }
@@ -163,8 +181,10 @@ export class NewSaleComponent implements OnInit {
   //#region Bill
   addSaleDetail(qty: String){
     if(!this.checkIfSaleDetailRepeats(Number(qty))){
+      ID: this.actualProduct.id,
       saleDetails.push({IDProduct: this.actualProduct.id, Quantity: Number(qty)});
       saleDetailsBill.push({ID: this.actualProduct.id, Name: this.actualProduct.name, 
+        Price:this.actualProduct.unitPrice,
         Quantity: Number(qty), Subtotal: this.actualProduct.unitPrice * Number(qty)})
     }
     this.updateBillTable();
@@ -224,14 +244,15 @@ export class NewSaleComponent implements OnInit {
             this.saleDetailsTable = [];
             saleDetails = [];
             this.updateBillTable();
-            this.data.sendSale(newSale);
+            this.data.sendSale(newSale);            
+            alert('factura realizada correctamente')
             this.router.navigate(["/sale-completed"]);
           } else{
           }
       });
   }
   getTotal(){
-    return saleDetailsBill.map(t => t.Subtotal).reduce((acc, value) => acc + value, 0);
+    return saleDetailsBill.map(t => t.Subtotal+ t.Subtotal*0.12).reduce((acc, value) => acc + value, 0);
   }
   //#endregion 
 }

@@ -30,7 +30,7 @@
                 <ng-container matColumnDef="Unit Price">
                     <th id="colorLabel" mat-header-cell *matHeaderCellDef>Precio c/u</th>
                     <td id="colorLabel"  mat-cell *matCellDef="let element">
-                        {{ element.unitPrice | number: '1.2-2' }} $</td>
+                        {{ element.unitPrice | number: '1.2-2'}} $</td>
                 </ng-container> 
                 <ng-container *ngIf="user.admin" matColumnDef="Options">
                     <th  mat-header-cell *matHeaderCellDef></th>

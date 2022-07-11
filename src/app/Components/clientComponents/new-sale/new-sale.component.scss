@@ -61,7 +61,7 @@
             
     .billTitle{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         background-color:rgb(255, 255, 255);
     }
 
@@ -171,3 +171,25 @@
             background-color:#ffffff;
             border-bottom: solid 2px black;
         }
+
+        
+    
+    div table.totales{
+        text-align: right;
+        margin: 10px 0 0 auto;
+                
+    }
+#letras{
+    padding: 15px;
+    font-size: 20PX;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold; 
+    margin: inherit; 
+}
+
+    #numeros{
+        padding: 15px;
+        font-size: 20PX;
+        font-family: "Montserrat", sans-serif;         
+        margin: inherit;   
+    }
