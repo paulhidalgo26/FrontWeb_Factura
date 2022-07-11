@@ -1,5 +1,5 @@
 //#region Imports,Var&Component
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product';
 import { Sale } from 'src/app/models/sale';
@@ -21,7 +21,7 @@ import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 var newSale: Sale;
 var saleDetails: SaleDetail[] = [];
 var saleDetailsBill: SaleDetailBill[] = [];
-var numberfac=74;
+var numberfac=76;
 
 @Component({
   selector: 'app-new-sale',
@@ -31,6 +31,9 @@ var numberfac=74;
 
 //#endregion
 export class NewSaleComponent implements OnInit {
+
+  @ViewChild('firstname', {static: true}) firstname:any;
+
   //#region Variables  
   public user!: User;
   public actualClient: Client = {
@@ -51,7 +54,7 @@ export class NewSaleComponent implements OnInit {
   public productForm = this.formBuilder.group({
     'ProductId': [{value: 0, disabled: true}, Validators.required],
     'ProductName': [{value: '', disabled: true}, Validators.required],
-    'ProductQuantity': [{value: 0, disabled: true}, Validators.required],
+    'ProductQuantity': [{value: 0, disabled: false}],
     'ProductPrice':[{value: 0,disabled: true},Validators.required],
     'ProductTotal': [{value: 0, disabled: true}, Validators.required],
     'ProductStok': [{value: 0, disabled: true}, Validators.required]
@@ -87,6 +90,7 @@ export class NewSaleComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    
     this.updateBillTable();
   }
   //#endregion
@@ -146,6 +150,7 @@ export class NewSaleComponent implements OnInit {
   //#endregion
   //#region Product Selected
   selectProduct(productSelected: Product){
+    this.firstname.nativeElement.focus();
     this.productForm = this.formBuilder.group({
       'ProductId': [{value: productSelected.id, disabled: true},  Validators.required],
       'ProductName': [{value: productSelected.name, disabled: true},  Validators.required],

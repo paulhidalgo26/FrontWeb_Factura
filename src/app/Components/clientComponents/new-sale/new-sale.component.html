@@ -35,8 +35,7 @@
             </div>
 
 
-            <div class="billTitle" >
-                
+            <div class="billTitle" >     
                     
                 <div class="d-flex">Factura #{{numberfac}}</div>
                 <div>Fecha: {{fecha}}</div>
@@ -63,7 +62,7 @@
 
                     <mat-form-field class="fieldNumber" id="bordes">
                         <mat-label id="colorLabel">Cantidad</mat-label>
-                        <input id="colorLabel" matInput type="number" formControlName="ProductQuantity" 
+                        <input id="colorLabel" matInput type="number" formControlName="ProductQuantity" #firstname
                         (input)="calculateProductTotal(quantity.value);" #quantity>
                     </mat-form-field>
 

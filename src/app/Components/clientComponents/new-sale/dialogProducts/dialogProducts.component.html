@@ -27,12 +27,13 @@
             <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.quantity }}</td>
         </ng-container>
         <ng-container matColumnDef="Unit Price">
-            <th mat-header-cell *matHeaderCellDef>Precio c/u</th>
-            <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.unitPrice | number: '1.2-2'}} $</td>
+            <th mat-header-cell *matHeaderCellDef style="text-align: end;">Precio c/u</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element" style="text-align: end;"
+            >{{ element.unitPrice | number: '1.2-2'}} $</td>
         </ng-container> 
         <ng-container matColumnDef="Add">
-            <th mat-header-cell *matHeaderCellDef></th>
-            <td id="colorLabel" mat-cell *matCellDef="let element"><button  mat-raised-button color="primary" 
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"></th >
+            <td id="colorLabel" mat-cell *matCellDef="let element" style="text-align: center;"><button  mat-raised-button color="primary" 
                 (click)="selectProduct(element)"><mat-icon>add</mat-icon></button></td>
         </ng-container>
             <tr mat-header-row *matHeaderRowDef="tableProductsColumns"></tr>
