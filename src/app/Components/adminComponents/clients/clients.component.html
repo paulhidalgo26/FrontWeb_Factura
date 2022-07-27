@@ -1,0 +1,40 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2" id="barras"> Clientes 
+        <button class="buttonAdd" mat-flat-button  (click)="addClient()">Nuevo Cliente</button>
+    </div>
+    <div class="page__content shadow">
+        <table class="page__content-data" 
+        mat-table [dataSource]="list" 
+        class="mat-elevation-24">
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.id }}</td>
+            </ng-container>
+            <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef>Correo</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.email }}</td>
+            </ng-container>
+            <ng-container matColumnDef="Cedula">
+                <th mat-header-cell *matHeaderCellDef>Cedula</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.cedula }}</td>
+            </ng-container> 
+            <ng-container matColumnDef="Options">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    <button  mat-raised-button color="primary"
+                    (click)="selectClient(element)"><mat-icon>edit</mat-icon> </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+        </table>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2" id="barraaSp">VENTAS</div>
+    <div class="page__content shadow" id="contenedor">
+        
+        <div  id="alineacion">
+            <img src="./assets/icons8-búsqueda-64.png" alt="">
+            <input   (keyup)="searchSales($event)" placeholder="" id="busqueda">
+        </div>
+        <table class="page__content-data"  
+        mat-table [dataSource]="dataSource" 
+        class="mat-elevation-24">
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.id }}</td>
+            </ng-container>
+            <ng-container matColumnDef="Date" >
+                <th mat-header-cell *matHeaderCellDef >Fecha</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.date | date:'yyyy-MM-dd hh:mm' }}</td>
+            </ng-container>
+            <ng-container matColumnDef="IDUserClient">
+                <th mat-header-cell *matHeaderCellDef>ID Cliente</th>
+                <td id="colorLabel" mat-cell *matCellDef="let element">
+                    {{ element.iduserClient }}</td>
+            </ng-container>
+            <ng-container matColumnDef="Total">
+                <th mat-header-cell *matHeaderCellDef>Total</th>
+                <td id="colorLabelT" mat-cell *matCellDef="let element">
+                    {{ (element.total*0.12 +element.total)   | number: '1.2-2' }} $</td>
+            </ng-container> 
+            <ng-container matColumnDef="Select">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td  mat-cell *matCellDef="let element"><button  mat-raised-button color="primary" 
+                    (click)="selectSale(element)"><mat-icon>info</mat-icon> </button></td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+        </table>
+        <mat-paginator #paginator [pageSizeOptions]="[7]" ></mat-paginator >
+    </div>
+  </div>

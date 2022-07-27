@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-drawer {
+    width: 260px;
+  }
+  mat-drawer-container {
+    height: 100%;
+    background: white
+  }
+  
+  mat-drawer {
+    background-color: white;
+  }
+  #barrasuperior{
+    background: darkturquoise;
+    font-family: cursive;
+    margin: auto;      
+  }
+  

@@ -1,0 +1,43 @@
+<div mat-dialog-title>
+    <h1 mat-dialog-title>Productos</h1>
+    <button mat-raised-button color="warn"(click)="close()"> <mat-icon>cancel</mat-icon> </button>
+</div>
+
+<mat-form-field appearance="standard">
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="searchProduct($event)" placeholder="" #input>
+</mat-form-field>
+
+<div mat-dialog-content >
+    <table mat-table [dataSource]="dataSource"> 
+        <ng-container matColumnDef="ID">
+            <th  mat-header-cell *matHeaderCellDef >ID</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Name">
+            <th  mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Genre">
+            <th mat-header-cell *matHeaderCellDef>Categoria</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.genre }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Unit Price">
+            <th mat-header-cell *matHeaderCellDef style="text-align: end;">Precio c/u</th>
+            <td id="colorLabel" mat-cell *matCellDef="let element" style="text-align: end;"
+            >{{ element.unitPrice | number: '1.2-2'}} $</td>
+        </ng-container> 
+        <ng-container matColumnDef="Add">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"></th >
+            <td id="colorLabel" mat-cell *matCellDef="let element" style="text-align: center;"><button  mat-raised-button color="primary" 
+                (click)="selectProduct(element)"><mat-icon>add</mat-icon></button></td>
+        </ng-container>
+            <tr mat-header-row *matHeaderRowDef="tableProductsColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: tableProductsColumns;"></tr>
+    </table>
+    <mat-paginator #paginator [pageSizeOptions]="[6]"></mat-paginator>
+</div>

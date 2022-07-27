@@ -1,0 +1,24 @@
+<mat-nav-list>
+    <div class="logo py-4" >
+      <img  src="./assets/factura.png">
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">MENU</h2>
+  
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+      <mat-icon id="icono">home</mat-icon> PRINCIPAL
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/product-view">
+      <mat-icon id="icono">dashboard</mat-icon> PRODUCTOS
+    </a>
+    <a *ngIf="user && user.admin" mat-list-item routerLink="/new-sale">
+      <mat-icon id="icono" >fact_check</mat-icon>FACTURAR
+    </a>
+    <a *ngIf="user && user.admin" mat-list-item routerLink="/clients">
+      <mat-icon id="icono">face</mat-icon>CLIENTES
+    </a>
+    <a *ngIf="user" mat-list-item routerLink="/sales-view">
+      <mat-icon id="icono">point_of_sale</mat-icon>VENTAS
+    </a>
+</mat-nav-list>
+  

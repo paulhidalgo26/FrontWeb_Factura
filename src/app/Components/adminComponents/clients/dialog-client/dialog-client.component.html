@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<div mat-dialog-content>
+    <form class="formProduct" [formGroup]="clientForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" formControlName="name">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo</mat-label>
+                    <input matInput type="email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cedula</mat-label>
+                    <input matInput #input maxlength="10" minlength="10" type="text" formControlName="cedula">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>
+    <button class="btnAction" mat-flat-button color="primary" [disabled]="!clientForm.valid" (click)="buttonAction()">{{btnTitle}}</button>
+    <button class="btnDelete" *ngIf="this.data.action" mat-flat-button color="warn" (click)="deleteClient()">Delete</button>    
+    </form>
+</div>

@@ -1,0 +1,44 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    &__box {
+      min-height: 115px;
+      background: #1e293b;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+    &__content {
+      min-height: calc(100vh - 178px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+      height: 100%;
+      &-data {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    
+  }
+  #bienvenidos{
+    border: solid 1px;
+    padding: 132px;
+    width: 399px;
+    border-color: #86bcc7;
+    border-radius: 108%;
+    padding-left: 79px;
+    margin-top: 23px;
+    background: honeydew;
+    font-family: cursive;
+  }
+
+  #barrasuperior{
+    background: darkturquoise;
+    font-family: cursive;
+    margin: auto;      
+  }
+  

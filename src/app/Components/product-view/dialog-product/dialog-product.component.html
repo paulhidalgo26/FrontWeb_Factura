@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+<div mat-dialog-content>
+    <form class="formProduct" [formGroup]="productForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" formControlName="Name">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cantidad</mat-label>
+                    <input matInput type="number" formControlName="Quantity">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Categoria</mat-label>
+                    <input matInput type="text" formControlName="Genre">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio Unitario</mat-label>
+                    <input type="number" matInput formControlName="UnitPrice">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cost</mat-label>
+                    <input matInput type="number" formControlName="Cost">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Url</mat-label>
+                    <input matInput type="text" formControlName="ImageURL">
+                </mat-form-field>
+
+           
+
+    
+    </form>
+    <button mat-flat-button color="primary" [disabled]="!productForm.valid" (click)="buttonAction()">{{btnTitle}}</button>
+    <button class="btnDelete" *ngIf="this.data.action" mat-flat-button color="warn" (click)="deleteProduct()">Borrar</button>    
+</div>

@@ -1,0 +1,195 @@
+@import "../../home/home.component.scss";
+
+.newSale{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px 8px 0px 0px;
+}
+    .clientDetails{
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        border-radius: 5px 5px 0px 0px;
+    }
+        .buttonsClient{
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #f44336;
+            border: solid 1px black;
+            margin-right: 5px;
+        }
+            .buttonsClient_openDialog{
+                width: 50%;
+                height: 100%;                
+                background-color: #4CAF50;
+                color: aliceblue;
+            }
+            .buttonsClient_ukClient{
+                width: 50%;
+                height: 100%;
+                border-right: solid 1px black;
+                color: aliceblue;
+            }
+        .formClient{
+            width: 85%;
+            height: 60px;
+            flex-wrap: wrap;
+            font-size: 16px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;            
+            border: solid 1px;
+            
+        }            
+            .formClient > mat-form-field{
+                height: 50px;
+                width: 25%;
+            }
+            .formProduct > button{
+                width: 25%;
+                height: 95%;
+                
+            } 
+            .fieldNumber{
+                width: 80px;
+                font-size: large;
+                padding: 1%;
+                
+                
+            }
+            
+    .billTitle{
+        display: flex;
+        justify-content: space-between;
+        background-color:rgb(255, 255, 255);
+    }
+
+    //------------Barra  de busquedea de productos--------------------
+
+    .formProduct{
+        width: 85%;
+        height: 60px;
+        flex-wrap: wrap;
+        font-size: 16px;        
+        //border-radius: 0px 5px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        
+        border: solid 1px;
+        
+    }
+
+    .productDetails{
+        display: flex;
+        margin-right: 10px;       
+        border-radius: 5px 5px 0px 0px;
+        margin: 0;
+    }
+        .buttonsProduct{
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: solid 1px;
+            margin-right: 5px;
+            background-color:  #2196F3;;
+                        
+        }
+            .buttonsProduct_openDialog{
+                width: 100%;
+                height: 100%;
+                color: #f7f7f8;                
+            }
+        #table{
+            width: 100%;
+            height: 100%;
+            background-color: #f7f7f8;
+            border-bottom: solid 2px black;
+            color: #143766;
+            border-collapse: collapse;
+            
+        }
+    .productsbill{
+        height: 100%;        
+        border: solid 1px ;
+    }
+        .productListTable{
+            overflow:hidden !important;
+            
+        }
+        .billInformation{
+            height: 100%;
+            width: 10;
+        }
+        .billInformation > button{
+            width: 98.5%;
+            margin: 10px;
+            height: 100%;
+        }
+        tr.mat-footer-row {
+            font-weight: bold;
+            border-top: 1px solid rgb(255, 255, 255);
+          }
+          #barras{
+            background: #143766;
+            font-family: cursive;            
+           
+        }
+
+        #colorLabel{
+            color: black !important;           
+        }
+        #bordes{
+          
+            border-right: solid 1px;          
+            height: 59px; 
+                       
+        }
+        .buttonsComfir{
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: solid 1px;
+            margin-left: 5px;
+            
+        }   
+        #buton{
+            width: 100%;
+                height: 100%;
+            color: rgb(255, 249, 249);
+            font-size: medium;            
+            background-color: #4CAF50;
+        }
+          
+        .mat-row:nth-child(even){
+            background-color: #e4f0ec;
+            border-bottom: solid 2px black;
+        }
+        .mat-row:nth-child(odd){
+            background-color:#ffffff;
+            border-bottom: solid 2px black;
+        }
+
+        
+    
+    div table.totales{
+        text-align: right;
+        margin: 10px 0 0 auto;
+                
+    }
+#letras{
+    padding: 15px;
+    font-size: 20PX;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold; 
+    margin: inherit; 
+}
+
+    #numeros{
+        padding: 15px;
+        font-size: 20PX;
+        font-family: "Montserrat", sans-serif;         
+        margin: inherit;   
+    }

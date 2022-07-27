@@ -1,0 +1,33 @@
+@import "../../home/home.component.scss";
+
+.mat-table{    
+    width: 100%;
+    border-radius: 10px;
+    overflow:hidden !important;
+    background-color: #11161f;
+}
+.buttonAdd{
+    
+    background-color: rgb(210, 30, 60);
+    border-radius: 10%;
+    font-family: cursive;
+    font-size: large;
+}
+#barras{
+    background: darkturquoise;
+    font-family: cursive;
+    justify-content: space-between; 
+    align-items: baseline;
+}
+.mat-row:nth-child(even){
+    background-color: #e4f0ec;
+    border-bottom: solid 2px black;
+}
+.mat-row:nth-child(odd){
+    background-color:#ffffff;
+    border-bottom: solid 2px black;
+
+}
+#colorLabel{
+    color: black !important;           
+}
